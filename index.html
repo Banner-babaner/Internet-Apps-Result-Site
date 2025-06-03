@@ -19,17 +19,25 @@
                         <a href="#teachers" class="hover:bg-gray-700 rounded-lg p-2"><button>Преподаватели</button></a>
                         <a href="#ask" class="hover:bg-gray-700 rounded-lg p-2"><button>Рассылки</button></a>
                         <a href="#contacts" class="hover:bg-gray-700 rounded-lg p-2"><button>Контакты</button></a>
+                        <div class="max-h-full self-center">
+                            <button class="h-5 rounded-full border-8 border-double bg-white border-black dark:bg-black dark:border-white aspect-square" id="mini-changer">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
             <button class="p-5"><img src="dist/img/logo.svg" alt="logo" class="w-full"></button>
-            <div class="text-white gap-6 hidden lg:flex justify-around">
+            <div class="text-white gap-6 hidden lg:flex justify-around items-center">
                 <a href="#"><button>Главная</button></a>
                 <a href="#cources"><button>Курсы</button></a>
                 <a href="#rasp"><button>Расписание</button></a>
                 <a href="#teachers"><button>Преподаватели</button></a>
                 <a href="#ask"><button>Рассылки</button></a>
                 <a href="#contacts"><button>Контакты</button></a>
+                <div class="max-h-full">
+                    <button class="h-5 rounded-full border-8 border-double bg-white border-black dark:bg-black dark:border-white aspect-square" id="changer">
+                    </button>
+                </div>
             </div>
             <button class="text-2xl lg:text-base bg-gradient-to-r from-violetBtn-0 to-violetBtn-1 px-5 py-3 rounded-full m-6">Зайти в кабинет</button>
         </header>
@@ -277,10 +285,10 @@
     <footer class="container flex flex-col items-center px-4 py-20 lg:px-44 lg:py-40 w-full justify-self-center">
         <h2 class="text-6xl lg:text-5xl text-center mb-8" id="ask">Статьи каждую неделю</h2>
         <h3 class="dark:text-white/50 text-black/80 mb-8 text-2xl lg:text-base text-center">Больше 90% учеников прошли полный курс и смогли собрать свой первый компьютер</h3>
-        <form action="#" class="w-full lg:w-1/2">
+        <form action="#" class="w-full lg:w-1/2" method="post">
             <div class="flex rounded-full dark:bg-white/40 bg-black/20 pl-5 text-4xl lg:text-2xl justify-between">
                 <input type="email" name="user_email" id="user_email" placeholder="E-mail" required="" class="bg-transparent outline-none p-5 w-full text-black dark:text-white placeholder:text-black dark:placeholder:text-white">
-                <input  type="submit" value="Подписаться" class="rounded-full px-5 py-3 bg-gradient-to-r from-vioredBtn-0 to-vioredBtn-1 hover:bg-gradient-to-l text-white">
+                <input  type="submit" value="Подписаться" class="rounded-full px-5 py-3 bg-gradient-to-r from-vioredBtn-0 to-vioredBtn-1 text-white">
             </div>
         </form>
         <div class="flex gap-12 mt-10 w-4/5 justify-center lg:w-2/5" id="contacts">
