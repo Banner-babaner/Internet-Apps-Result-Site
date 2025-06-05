@@ -286,7 +286,7 @@
 
         <div class="w-full flex flex-col items-center gap-10">
             <h2 class="text-6xl lg:text-5xl text-center">Тест по JS</h2>
-            <section class="w-fit flex flex-col gap-5">
+            <section class="w-fit flex flex-col gap-5 text-2xl lg:text-lg">
                 <div class="flex flex-col">
                     <p>1. JS-это...</p>
                     <select class="p-3 outline-none rounded text-center dark:text-black" id="question1">
@@ -418,9 +418,9 @@
             </button>
         </div>
     </footer>
-    <dialog class="backdrop:bg-black/50 rounded-lg bg-none" id="modalWindow">
+    <dialog class="backdrop:bg-black/50 rounded-lg bg-none text-4xl lg:text-base" id="modalWindow">
         <div class="p-8 flex flex-col items-center gap-5 bg-gray-200 rounded-lg border-8 border-double border-slate-300 dark:border-white/50 dark:bg-gray-950">
-            <p class="text-2xl dark:text-white">Укажите ваше имя</p>
+            <p class="text-6xl lg:text-2xl dark:text-white">Укажите ваше имя</p>
             <input type="text" id="nameGetter" value="ShadowFrog" maxlength="20" class="text-center">
             <div class="flex justify-between gap-5">
                 <button class="bg-slate-400 p-3 rounded-lg bg-gradient-to-r from-slate-600 to-slate-800 dark:from-vioredBtn-1 dark:to-vioredBtn-0 text-white" id="commitName">
@@ -433,9 +433,9 @@
         </div>
             
     </dialog>
-    <dialog class="backdrop:bg-black/50 rounded-lg bg-none" id="userData">
+    <dialog class="backdrop:bg-black/50 rounded-lg bg-none text-4xl lg:text-base" id="userData">
         <div class="p-8 flex flex-col items-center gap-5 bg-gray-200 dark:bg-gray-950 dark:text-white rounded-lg border-8 border-double border-slate-300 dark:border-white/50">
-            <p class="text-lg dark:text-white" id="userName">Ваше имя</p>
+            <p class="text-6xl lg:text-2xl dark:text-white" id="userName">Ваше имя</p>
             <p class="dark:text-white">Ваш лучший результат: <span id="userScore">0</span></p>
             <div class="flex justify-between gap-5">
                 <button class="bg-slate-400 p-3 rounded-lg bg-gradient-to-r from-slate-600 to-slate-800 dark:from-vioredBtn-1 dark:to-vioredBtn-0 text-white" id="closeData">
