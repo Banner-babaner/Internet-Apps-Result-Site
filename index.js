@@ -45,6 +45,10 @@ document.querySelector("#commitName").onclick = ()=>{
     querySelector("#nameGetter").value = "";
     return;
   }
+  else if(user=="user"||user=="theme"){
+    alert(`Имя не может быть "${user}"`);
+    return;
+  }
   localStorage.setItem("user", user);
   userEnter.classList.remove("animate-pulse");
   userEnter.innerText = user;
