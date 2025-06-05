@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="dist/output.css" rel="stylesheet">
+    <title>Computer Education</title>
 </head>
 <body class="dark:bg-black dark:text-white text-black font-Roboto justify-center bg-gray-300 w-full">
     <div class="bg-head_banner bg-center bg-cover bg-no-repeat flex flex-col justify-between gap-52 lg:gap-28 text-white">
@@ -44,19 +47,19 @@
         <h1 class="w-1/2 text-7xl ml-20 lg:text-6xl lg:ml-40">Первый курс<br>по компьютерной сборке</h1>
         <div class="text-4xl lg:text-2xl sm:ml-20 lg:ml-40 flex gap-4">
             <div class="bg-grayBack-0 p-5">
-                <p class="text-center font-bold">18</p>
+                <p class="text-center font-bold" id="days">18</p>
                 <p class="text-center text-base lg:text-xs text-white/40">Дней</p>
             </div>
             <div class="bg-grayBack-0 p-5">
-                <p class="text-center font-bold">18</p>
+                <p class="text-center font-bold" id="hours">18</p>
                 <p class="text-center text-base lg:text-xs text-white/40">Часов</p>
             </div>
             <div class="bg-grayBack-0 p-5">
-                <p class="text-center font-bold">18</p>
+                <p class="text-center font-bold" id="minutes">18</p>
                 <p class="text-center text-base lg:text-xs text-white/40">Минут</p>
             </div>
             <div class="bg-grayBack-0 p-5">
-                <p class="text-center font-bold">18</p>
+                <p class="text-center font-bold" id="seconds">18</p>
                 <p class="text-center text-base lg:text-xs text-white/40">Секунд</p>
             </div>
         </div><!-- Timer -->
@@ -142,7 +145,7 @@
                 <div class="flex flex-col w-1/12 items-center">
                     <div class="bg-gradient-to-b from-slate-600 to-slate-800  dark:from-violetBtn-0 dark:to-violetBtn-1 h-1/4 w-full"></div>
                     <div class="bg-gradient-to-t from-slate-600 to-slate-800  dark:from-violetBtn-0 dark:to-violetBtn-1 h-1/4 w-3/4"></div>
-                    <div class="bg-gradient-to-b from-slate-600 to-slate-800  dark:from-violetBtn-0 dark:to-violetBtn-1Btn-1 h-1/4 w-1/2"></div>
+                    <div class="bg-gradient-to-b from-slate-600 to-slate-800  dark:from-violetBtn-0 dark:to-violetBtn-1 h-1/4 w-1/2"></div>
                     <div class="bg-gradient-to-t from-slate-600 to-slate-800  dark:from-violetBtn-0 dark:to-violetBtn-1 h-1/4 w-1/4"></div>
                 </div>
                 <div class="w-full flex-col flex gap-3 text-2xl text-black/80 dark:text-white/50">
@@ -261,27 +264,136 @@
             </div>
             <div class="flex justify-between items-center gap-20 flex-col lg:flex-row">
                 <div class="w-2/3 lg:w-1/4 flex flex-col justify-between gap-8 items-center">
-                    <img src="dist/img/teachers/frog.jpg" alt="" class="rounded-full w-4/5 aspect-square shadow-lg">
+                    <img src="dist/img/teachers/frog.jpg" alt="" class="rounded-full w-4/5 aspect-square shadow-lg pointer-events-none">
                     <p class="text-4xl lg:text-2xl text-center">Shadow Frog</p>
                     <p class="text-3xl lg:text-base text-center">Специалист по КВА</p>
                     <b class="dark:hover:shadow-none text-3xl lg:text-base border-black dark:border-white border-2 rounded-full px-5 py-3 hover:text-black/40 dark:hover:text-white/40 transition hover:transition text-center">Биография</b>
                 </div>
                 <div class="w-2/3 lg:w-1/4 flex flex-col justify-between gap-8 items-center">
-                    <img src="dist/img/teachers/oleg.jpg" alt="" class="rounded-full w-4/5 aspect-square">
+                    <img src="dist/img/teachers/oleg.jpg" alt="" class="rounded-full w-4/5 aspect-square pointer-events-none">
                     <p class="text-4xl lg:text-2xl text-center">OLEG</p>
                     <p class="text-3xl lg:text-base text-center">Специалист по мотивации</p>
                     <b class="text-3xl lg:text-base border-black dark:border-white border-2 rounded-full px-5 py-3 hover:text-black/40  dark:hover:text-white/40 transition hover:transition text-center">Биография</b>
                 </div>
                 <div class="w-2/3 lg:w-1/4 flex flex-col justify-between gap-8 items-center">
-                    <img src="dist/img/teachers/goose.png" alt="" class="rounded-full w-4/5 aspect-square">
+                    <img src="dist/img/teachers/goose.png" alt="" class="rounded-full w-4/5 aspect-square pointer-events-none">
                     <p class="text-4xl lg:text-2xl text-center">Гусь Китайский</p>
                     <p class="text-3xl lg:text-base text-center">Брат тех, кто жил у бабуси</p>
                     <b class="text-3xl lg:text-base border-black dark:border-white border-2 rounded-full px-5 py-3 dark:hover:text-white/40 transition hover:transition text-center hover:text-black/40">Биография</b>
                 </div>
             </div>
         </div><!--Teachers-->
-        
+
+        <div class="w-full flex flex-col items-center gap-10">
+            <h2 class="text-6xl lg:text-5xl text-center">Тест по JS</h2>
+            <section class="w-fit flex flex-col gap-5">
+                <div class="flex flex-col">
+                    <p>1. JS-это...</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black" id="question1">
+                        <option value="0"></option>
+                        <option value="1">Язык программирования</option>
+                        <option value="2">Язык разметки</option>
+                        <option value="3">Язык стилей</option>
+                        <option value="4">Библиотека для Java</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>2. Где он используется чаще всего</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black" id="question2">
+                        <option value="0"></option>
+                        <option value="1">Разработка ПО</option>
+                        <option value="2">Консольные приложения</option>
+                        <option value="3">Веб-страницы и веб-приложения</option>
+                        <option value="4">Стилизация Excel</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>3. Переменные в JS</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black" id="question3">
+                        <option value="0"></option>
+                        <option value="1">Не меняют свой тип</option>
+                        <option value="2">Не меняют своё значение</option>
+                        <option value="3">Не могут повторяться</option>
+                        <option value="4">Могут приводиться к другому типу</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>4. Таймеры в JS</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black"  id="question4">
+                        <option value="0"></option>
+                        <option value="1">timeTicker, timeHolder</option>
+                        <option value="2">setTimeOut, setInterval
+</option>
+                        <option value="3">new Timer</option>
+                        <option value="4">dayer, hourser, minuter, secunder</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>5. Где в браузере можно писать в JS без дополнительных файлов</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black"  id="question5">
+                        <option value="0"></option>
+                        <option value="1">Инструменты разработчика>>Elements</option>
+                        <option value="2">Инструменты разработчика>>Styles</option>
+                        <option value="3">Инструменты разработчика>>Console</option>
+                        <option value="4">Инструменты разработчика>>Memory</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>6. Что вернёт true</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black" id="question6">
+                        <option value="0"></option>
+                        <option value="1">null!=""</option>
+                        <option value="2">null==""</option>
+                        <option value="3">null&lt;""</option>
+                        <option value="4">null&gt;""</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>7. К циклам JS относят...</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black" id="question7">
+                        <option value="0"></option>
+                        <option value="1">for, while, do-while</option>
+                        <option value="2">for, while, forEach</option>
+                        <option value="3">cycle</option>
+                        <option value="4">loop, repeat</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>8. Выбрать HTML-элемент по id можно с помощью...</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black" id="question8">
+                        <option value="0"></option>
+                        <option value="1">idFinder</option>
+                        <option value="2">document.querySelector, document.getElementById</option>
+                        <option value="3">findById</option>
+                        <option value="4">get</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>9. Как расшифровывается JS</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black" id="question9">
+                        <option value="0"></option>
+                        <option value="1">Jaba Script</option>
+                        <option value="2">JaSon</option>
+                        <option value="3">Java Selector</option>
+                        <option value="4">Java Script</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <p>10. Способы навесить прослушивание события</p>
+                    <select class="p-3 outline-none rounded text-center dark:text-black" id="question10">
+                        <option value="0"></option>
+                        <option value="1">addEventListener</option>
+                        <option value="2">addListenting, </option>
+                        <option value="3">eventer</option>
+                        <option value="4">listenFor</option>
+                    </select>
+                </div>
+                <button class="rounded p-5 bg-gradient-to-r dark:from-vioredBtn-0 dark:to-vioredBtn-1 text-white from-slate-600 to-slate-800" id="checkTest">Проверить</button>
+            </section>
+        </div><!-- Test -->
     </div>
+
+
     <footer class="container flex flex-col items-center px-4 py-20 lg:px-44 lg:py-40 w-full justify-self-center">
         <h2 class="text-6xl lg:text-5xl text-center mb-8" id="ask">Статьи каждую неделю</h2>
         <h3 class="dark:text-white/50 text-black/80 mb-8 text-2xl lg:text-base text-center">Больше 90% учеников прошли полный курс и смогли собрать свой первый компьютер</h3>
@@ -329,7 +441,7 @@
                 <button class="bg-slate-400 p-3 rounded-lg bg-gradient-to-r from-slate-600 to-slate-800 dark:from-vioredBtn-1 dark:to-vioredBtn-0 text-white" id="closeData">
                     Отмена
                 </button>
-                <button class="bg-slate-400 p-3 rounded-lg bg-gradient-to-r dark:from-vioredBtn-0 dark:to-vioredBtn-1 text-white from-slate-600 to-slate-800 " id="exit">
+                <button class="bg-slate-400 p-3 rounded-lg bg-gradient-to-r dark:from-vioredBtn-0 dark:to-vioredBtn-1 text-white from-slate-600 to-slate-800" id="exit">
                     Выйти
                 </button>
             </div>
