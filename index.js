@@ -1,3 +1,4 @@
+
 let user = localStorage.getItem("user");
 let best = localStorage.getItem(user);
 const autorization = document.querySelector("#modalWindow");
@@ -6,6 +7,8 @@ const userData = document.querySelector("#userData")
 const userName = document.querySelector("#userName");
 const userScore = document.querySelector("#userScore");
 const resTest = document.querySelector("#resTest");
+const hello = document.querySelector("#hello");
+let helloAnimation = undefined;
 
 let date = new Date();
 document.querySelector("#days").innerText = date.getDate();
@@ -17,7 +20,7 @@ document.querySelector("#seconds").innerText = date.getSeconds();
 setInterval(
   ()=>{
     let date = new Date();
-    document.querySelector("#days").innerText = date.getDay();
+    document.querySelector("#days").innerText = date.getDate();
     document.querySelector("#hours").innerText = date.getHours();
     document.querySelector("#minutes").innerText = date.getMinutes();
     document.querySelector("#seconds").innerText = date.getSeconds();
@@ -32,6 +35,7 @@ if(user){
   if(localStorage.getItem(user)) userScore.innerText = localStorage.getItem(user);
   userEnter.onclick = showUserData;
   resTest.classList.remove("hidden");
+  printName(`Добро пожаловать, ${user}`);
 }
 else{
   userEnter.classList.add("animate-pulse");
@@ -39,6 +43,7 @@ else{
   userEnter.onclick = ()=>{
     autorization.showModal();
   }
+  printName("Пожалуйста, авторизуйтесь в правом верхнем углу страницы");
 }
 
 document.querySelector("#commitName").onclick = ()=>{
@@ -60,6 +65,8 @@ document.querySelector("#commitName").onclick = ()=>{
   userEnter.onclick = showUserData;
   clearTest();
   autorization.close();
+  cancelAnimationFrame(helloAnimation);
+  printName(`Добро пожаловать, ${user}`);
 }
 document.querySelector("#cancelName").onclick = ()=>{
   autorization.close();
@@ -70,6 +77,8 @@ document.querySelector("#exit").onclick = ()=>{
   userEnter.classList.add("animate-pulse");
   resTest.classList.add("hidden");
   userEnter.innerText = "Зайти в кабинет";
+  cancelAnimationFrame(helloAnimation);
+  printName("Пожалуйста, авторизуйтесь в правом верхнем углу страницы");
   userEnter.onclick = ()=>{
     autorization.showModal();
   }
@@ -161,4 +170,20 @@ function checkTest(){
   document.querySelector("#checkTest").onclick = clearTest;
   resTest.classList.remove("hidden");
   resTest.innerText = `Ваш результат: ${res}${user?"":"\nАвторизуйтесь, чтобы сохранить его!"}`;
+}
+
+function printName(text, i=0,interval=0, delay=5){
+  if((!i)&(!interval)){
+    hello.innerHTML="";
+  }
+  if(interval==delay){
+    hello.innerHTML += text[i++];
+    interval=0;
+  }
+  let loop = ()=>{
+    printName(text, i, interval+1, delay);
+  }
+  if(i<text.length){
+    helloAnimation=requestAnimationFrame(loop);
+  }
 }
