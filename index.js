@@ -5,9 +5,10 @@ const userEnter = document.querySelector("#userEnter");
 const userData = document.querySelector("#userData")
 const userName = document.querySelector("#userName");
 const userScore = document.querySelector("#userScore");
+const resTest = document.querySelector("#resTest");
 
 let date = new Date();
-document.querySelector("#days").innerText = date.getDay();
+document.querySelector("#days").innerText = date.getDate();
 document.querySelector("#hours").innerText = date.getHours();
 document.querySelector("#minutes").innerText = date.getMinutes();
 document.querySelector("#seconds").innerText = date.getSeconds();
@@ -30,9 +31,11 @@ if(user){
   userName.innerText = user;
   if(localStorage.getItem(user)) userScore.innerText = localStorage.getItem(user);
   userEnter.onclick = showUserData;
+  resTest.classList.remove("hidden");
 }
 else{
   userEnter.classList.add("animate-pulse");
+  resTest.classList.add("hidden");
   userEnter.onclick = ()=>{
     autorization.showModal();
   }
@@ -65,6 +68,7 @@ document.querySelector("#cancelName").onclick = ()=>{
 document.querySelector("#exit").onclick = ()=>{
   localStorage.removeItem("user");
   userEnter.classList.add("animate-pulse");
+  resTest.classList.add("hidden");
   userEnter.innerText = "Зайти в кабинет";
   userEnter.onclick = ()=>{
     autorization.showModal();
@@ -119,6 +123,7 @@ function showUserData(){
 
 
 function clearTest(){
+  resTest.classList.add("hidden");
   for(let i=0; i<10; i++){
     let select = document.querySelector(`#question${i+1}`);
     document.querySelector(`#question${i+1}`).disabled=false;
@@ -154,5 +159,6 @@ function checkTest(){
   }
   document.querySelector("#checkTest").innerText="Попробовать снова";
   document.querySelector("#checkTest").onclick = clearTest;
-  alert(`Ваш результат: ${res}${user?"":"\nАвторизуйтесь, чтобы сохранить его!"}`);
+  resTest.classList.remove("hidden");
+  resTest.innerText = `Ваш результат: ${res}${user?"":"\nАвторизуйтесь, чтобы сохранить его!"}`;
 }
