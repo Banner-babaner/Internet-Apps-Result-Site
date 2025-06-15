@@ -172,7 +172,7 @@ function checkTest(){
   resTest.innerText = `Ваш результат: ${res}${user?"":"\nАвторизуйтесь, чтобы сохранить его!"}`;
 }
 
-function printName(text, i=0,interval=0, delay=5){
+function printName(text, i=0,interval=0, delay=2){
   if((!i)&(!interval)){
     hello.innerHTML="";
   }
