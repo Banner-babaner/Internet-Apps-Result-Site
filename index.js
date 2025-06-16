@@ -51,10 +51,12 @@ document.querySelector("#commitName").onclick = ()=>{
   if(user.length<3){
     alert("Имя не может быть меньше трёх букв");
     querySelector("#nameGetter").value = "";
+    user = undefined;
     return;
   }
   else if(user=="user"||user=="theme"){
     alert(`Имя не может быть "${user}"`);
+    user = undefined;
     return;
   }
   localStorage.setItem("user", user);
@@ -77,6 +79,7 @@ document.querySelector("#exit").onclick = ()=>{
   userEnter.classList.add("animate-pulse");
   resTest.classList.add("hidden");
   userEnter.innerText = "Зайти в кабинет";
+  user = undefined;
   cancelAnimationFrame(helloAnimation);
   printName("Пожалуйста, авторизуйтесь в правом верхнем углу");
   userEnter.onclick = ()=>{
