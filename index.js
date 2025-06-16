@@ -43,7 +43,7 @@ else{
   userEnter.onclick = ()=>{
     autorization.showModal();
   }
-  printName("Пожалуйста, авторизуйтесь в правом верхнем углу страницы");
+  printName("Пожалуйста, авторизуйтесь в правом верхнем углу");
 }
 
 document.querySelector("#commitName").onclick = ()=>{
@@ -78,7 +78,7 @@ document.querySelector("#exit").onclick = ()=>{
   resTest.classList.add("hidden");
   userEnter.innerText = "Зайти в кабинет";
   cancelAnimationFrame(helloAnimation);
-  printName("Пожалуйста, авторизуйтесь в правом верхнем углу страницы");
+  printName("Пожалуйста, авторизуйтесь в правом верхнем углу");
   userEnter.onclick = ()=>{
     autorization.showModal();
   }
@@ -88,6 +88,9 @@ document.querySelector("#exit").onclick = ()=>{
 document.querySelector("#burgerButton").onclick = ()=>{
     document.querySelector("#burger").classList.toggle("hidden");
 }
+
+document.querySelector("#burger").onclick = document.querySelector("#burgerButton").onclick;
+
 document.documentElement.classList.toggle(
   'dark',
   localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
